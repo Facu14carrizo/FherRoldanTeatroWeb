@@ -1,0 +1,134 @@
+import React, { useState } from 'react';
+import { Sparkles, Award, ArrowRight, Play, BookOpen, UserCheck, Drama, Bell, Flame, Heart } from 'lucide-react';
+import { fherBio } from '../data/fherData';
+
+export default function Hero() {
+  const [curtainCall, setCurtainCall] = useState(false);
+  const [applauseCount, setApplauseCount] = useState(148);
+
+  const handleCurtainCall = () => {
+    setCurtainCall(true);
+    setApplauseCount(prev => prev + 1);
+    setTimeout(() => setCurtainCall(false), 3000);
+  };
+
+  return (
+    <section id="inicio" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden spotlight-bg">
+      {/* Background Lighting Effects */}
+      <div className="absolute top-1/4 left-10 w-80 h-80 bg-[#991b1b]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-[#f59e0b]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
+
+      {/* Exciting Curtain Call Flash Effect */}
+      {curtainCall && (
+        <div className="fixed inset-0 z-50 pointer-events-none bg-gradient-to-r from-[#991b1b]/40 via-[#f59e0b]/30 to-[#991b1b]/40 animate-pulse flex items-center justify-center">
+          <div className="p-8 rounded-3xl bg-[#0a0908]/90 border border-[#f59e0b] text-center shadow-2xl backdrop-blur-xl animate-bounce">
+            <Bell className="w-12 h-12 text-[#f59e0b] mx-auto mb-2 animate-spin" />
+            <span className="font-serif text-3xl font-bold text-white block">¡3.ª LLAMADA DE TEATRO!</span>
+            <span className="text-sm font-sans text-[#f59e0b] uppercase tracking-widest block mt-1">«¡Mucha Mierda para la función!»</span>
+          </div>
+        </div>
+      )}
+
+      <div className="container relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Main Text Content */}
+          <div className="lg:col-span-7 flex flex-col items-start">
+            
+            {/* Top Interactive Badge */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="section-tag flex items-center gap-2 m-0">
+                <Flame className="w-4 h-4 text-[#f59e0b] animate-bounce" />
+                <span>Teatro Comunitario & Independiente</span>
+              </div>
+
+              <button
+                onClick={handleCurtainCall}
+                className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#991b1b]/30 text-amber-300 border border-[#991b1b]/50 hover:bg-[#991b1b] transition-all flex items-center gap-1.5 cursor-pointer shadow-lg hover:scale-105"
+              >
+                <Bell className="w-3.5 h-3.5" /> 3.ª Llamada ({applauseCount} 👏)
+              </button>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#f5f5f4] leading-[1.08] mb-4">
+              Fher Roldán
+            </h1>
+
+            {/* Sub-heading / Roles */}
+            <p className="text-xl sm:text-2xl text-[#f59e0b] font-serif italic mb-6 leading-relaxed font-semibold">
+              Dramaturgo · Director Teatral · Actor · Profesor de Lengua y Literatura · Productor
+            </p>
+
+            {/* Bio excerpt */}
+            <p className="text-base sm:text-lg text-[#a8a29e] mb-8 max-w-2xl leading-relaxed">
+              Más de dos décadas de pasión escénica y pedagógica. Fundador y Director de la <strong className="text-[#f5f5f4]">Compañía Teatral LA COLMENA</strong>, impulsando la transformación social a través del arte colectivo.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4 mb-12">
+              <a href="#obras" className="btn btn-primary text-base">
+                Explorar Obras y Roles <ArrowRight className="w-5 h-5" />
+              </a>
+              <a href="#galeria" className="btn btn-curtain text-base">
+                Ver Galería Escénica
+              </a>
+            </div>
+
+            {/* Quick Stats Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-full pt-8 border-t border-[rgba(255,255,255,0.08)]">
+              <div className="p-3 rounded-xl bg-[#141210]/60 border border-white/5">
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#f5f5f4] block">20+</span>
+                <span className="text-xs uppercase tracking-wider text-[#a8a29e]">Años de Trayectoria</span>
+              </div>
+              <div className="p-3 rounded-xl bg-[#141210]/60 border border-white/5">
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#f59e0b] block">2013</span>
+                <span className="text-xs uppercase tracking-wider text-[#a8a29e]">Fundador LA COLMENA</span>
+              </div>
+              <div className="col-span-2 sm:col-span-1 p-3 rounded-xl bg-[#141210]/60 border border-white/5">
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#f5f5f4] block">Premiado</span>
+                <span className="text-xs uppercase tracking-wider text-[#a8a29e]">Juegos Bonaerenses / CPTI</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Hero Visual Card with Suit Body + Fer's Excited Smiling Face */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              
+              {/* Decorative Stage Curtain Framing */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#991b1b] via-[#f59e0b] to-[#991b1b] rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+
+              <div className="relative rounded-2xl overflow-hidden bg-[#141210] border-2 border-[#f59e0b]/60 shadow-2xl">
+                <img
+                  src="/fher_hero.png"
+                  alt="Fher Roldán - Director Teatral en Traje con Expresión Emocionada"
+                  className="w-full h-[500px] sm:h-[560px] object-cover object-top hover:scale-105 transition-transform duration-700"
+                />
+                
+                {/* Overlay Curtain Tint */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-transparent to-transparent opacity-90" />
+
+                {/* Card Caption Footer */}
+                <div className="absolute bottom-0 inset-x-0 p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#f59e0b] animate-ping" />
+                    <span className="text-xs font-semibold uppercase tracking-widest text-[#f59e0b]">
+                      Director General & Productor
+                    </span>
+                  </div>
+                  <p className="font-serif text-lg font-bold text-white leading-snug">
+                    "El teatro es una herramienta de transformación social y encuentro humano."
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

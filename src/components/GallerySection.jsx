@@ -28,13 +28,15 @@ export default function GallerySection() {
     return item.category === activeFilter;
   });
 
-  const handleNext = () => {
+  const handleNext = (e) => {
+    if (e) e.stopPropagation();
     if (selectedIdx !== null) {
       setSelectedIdx((selectedIdx + 1) % filteredItems.length);
     }
   };
 
-  const handlePrev = () => {
+  const handlePrev = (e) => {
+    if (e) e.stopPropagation();
     if (selectedIdx !== null) {
       setSelectedIdx((selectedIdx - 1 + filteredItems.length) % filteredItems.length);
     }
@@ -43,7 +45,7 @@ export default function GallerySection() {
   const currentItem = selectedIdx !== null ? filteredItems[selectedIdx] : null;
 
   return (
-    <section id="galeria" className="py-24 bg-[#0a0908] relative spotlight-bg">
+    <section id="galeria" className="py-20 sm:py-24 bg-[#0a0908] relative spotlight-bg">
       <div className="container relative z-10">
         
         {/* Header */}
@@ -57,15 +59,15 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        {/* Filter Pills - Touch Scrollable on Mobile */}
+        <div className="flex overflow-x-auto no-scrollbar justify-start sm:justify-center gap-2 mb-8 pb-2 px-1">
           {filterCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer shrink-0 whitespace-nowrap ${
                 activeFilter === cat
-                  ? 'bg-[#991b1b] text-white shadow-md shadow-red-900/30'
+                  ? 'bg-[#991b1b] text-white shadow-md shadow-red-900/30 font-bold'
                   : 'bg-[#141210] text-[#a8a29e] hover:text-white border border-white/5'
               }`}
             >
@@ -74,15 +76,15 @@ export default function GallerySection() {
           ))}
         </div>
 
-        {/* Masonry / Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredItems.map((item, idx) => (
             <div
               key={item.id}
               onClick={() => setSelectedIdx(idx)}
-              className="glass-card p-2 group cursor-pointer overflow-hidden relative rounded-2xl hover:border-[#f59e0b] hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 transform hover:-translate-y-1"
+              className="glass-card p-2 group cursor-pointer overflow-hidden relative rounded-2xl hover:border-[#f59e0b] hover:shadow-2xl transition-all duration-300"
             >
-              <div className="relative h-64 w-full rounded-xl overflow-hidden bg-[#141210]">
+              <div className="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden bg-[#141210]">
                 <img
                   src={item.src}
                   alt={item.title}
@@ -101,10 +103,10 @@ export default function GallerySection() {
 
                 {/* Expand Icon & Caption */}
                 <div className="absolute bottom-3 inset-x-3 flex items-center justify-between text-white">
-                  <span className="font-serif text-sm font-semibold truncate group-hover:text-[#f59e0b] transition-colors">
+                  <span className="font-serif text-xs sm:text-sm font-semibold truncate group-hover:text-[#f59e0b] transition-colors">
                     {item.title}
                   </span>
-                  <Maximize2 className="w-4 h-4 text-[#f59e0b] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Maximize2 className="w-4 h-4 text-[#f59e0b] shrink-0 opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </div>
             </div>
@@ -116,53 +118,55 @@ export default function GallerySection() {
       {/* Lightbox Modal Carousel */}
       {currentItem && (
         <div className="modal-overlay" onClick={() => setSelectedIdx(null)}>
-          <div className="relative max-w-4xl w-full p-4" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-4xl w-full p-2 sm:p-4" onClick={(e) => e.stopPropagation()}>
             
             {/* Close Button */}
             <button
               onClick={() => setSelectedIdx(null)}
-              className="absolute -top-12 right-2 text-white hover:text-[#f59e0b] p-2 focus:outline-none transition-colors"
+              className="absolute top-4 right-4 z-30 text-white hover:text-[#f59e0b] p-2 bg-[#0a0908]/80 rounded-full border border-white/20 focus:outline-none"
+              aria-label="Cerrar"
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6" />
             </button>
 
             {/* Navigation Buttons */}
             <button
               onClick={handlePrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-[#0a0908]/80 text-white hover:text-[#f59e0b] border border-white/20 hover:border-[#f59e0b] transition-all backdrop-blur-md"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 p-2.5 sm:p-3 rounded-full bg-[#0a0908]/80 text-white hover:text-[#f59e0b] border border-white/20 transition-all backdrop-blur-md active:scale-95"
+              aria-label="Anterior"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <button
               onClick={handleNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-[#0a0908]/80 text-white hover:text-[#f59e0b] border border-white/20 hover:border-[#f59e0b] transition-all backdrop-blur-md"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 p-2.5 sm:p-3 rounded-full bg-[#0a0908]/80 text-white hover:text-[#f59e0b] border border-white/20 transition-all backdrop-blur-md active:scale-95"
+              aria-label="Siguiente"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <div className="bg-[#141210] border border-[#f59e0b]/40 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="relative flex items-center justify-center bg-black min-h-[400px]">
+              <div className="relative flex items-center justify-center bg-black min-h-[300px] sm:min-h-[420px]">
                 <img
                   src={currentItem.src}
                   alt={currentItem.title}
-                  className="w-full max-h-[75vh] object-contain"
+                  className="w-full max-h-[65vh] sm:max-h-[75vh] object-contain"
                 />
               </div>
 
-              <div className="p-6 bg-[#1a1714] border-t border-white/10 flex items-center justify-between">
+              <div className="p-4 sm:p-6 bg-[#1a1714] border-t border-white/10 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs uppercase font-bold tracking-widest text-[#f59e0b]">
+                    <span className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-[#f59e0b]">
                       {currentItem.category}
                     </span>
-                    <span className="text-xs text-[#a8a29e]">· Imagen {selectedIdx + 1} de {filteredItems.length}</span>
+                    <span className="text-[10px] sm:text-xs text-[#a8a29e]">· {selectedIdx + 1} de {filteredItems.length}</span>
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-white">
+                  <h3 className="font-serif text-lg sm:text-2xl font-bold text-white leading-snug">
                     {currentItem.title}
                   </h3>
                 </div>
-                <span className="text-xs text-[#a8a29e] italic font-serif hidden sm:inline-block">Fher Roldán · Teatro</span>
               </div>
             </div>
 

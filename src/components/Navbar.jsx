@@ -97,6 +97,20 @@ export default function Navbar() {
             >
               Contratación / Talleres
             </a>
+
+            <div className="pt-4 border-t border-white/10 text-center">
+              <span className="text-[11px] text-[#78716c]">
+                Sitio desarrollado por{' '}
+                <a
+                  href="https://waveframe.com.ar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#f59e0b] hover:underline font-semibold"
+                >
+                  Waveframe Studio
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       )}

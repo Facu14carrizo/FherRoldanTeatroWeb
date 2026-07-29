@@ -12,9 +12,9 @@ export default function BioSection() {
           <div className="section-tag">
             <BookOpen className="w-4 h-4" /> Trayectoria y Filosofía
           </div>
-          <h2 className="section-title">Un poco sobre mi</h2>
+          <h2 className="section-title">Un poco sobre mí</h2>
           <p className="section-subtitle">
-            Profesor, actor, director y dramaturgo comprometido con el teatro comunitario y la expresión colectiva.
+            Actor, director, dramaturgo y profesor comprometido con el teatro comunitario y la expresión colectiva.
           </p>
         </div>
 

@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Drama, CheckCircle2, Globe, MessageSquare, ArrowUp, Sparkles, Award, Heart, BookOpen, Share2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Drama, Globe, ArrowUp, Sparkles, Award, BookOpen, MessageCircle } from 'lucide-react';
+
+const InstagramIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
 export default function ContactFooter() {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
-    subject: 'Talleres de Teatro',
-    message: ''
+    subject: 'Inscripción a Talleres de Teatro'
   });
 
-  const handleSubmit = (e) => {
+  const handleWhatsAppSend = (e) => {
     e.preventDefault();
-    if (formData.name && formData.email) {
-      setSubmitted(true);
-    }
+    const phone = "5491165622872";
+    const nameText = formData.name.trim() ? `Soy ${formData.name.trim()}` : "te escribo desde tu sitio web";
+    const message = `¡Hola Fher! ${nameText} y me pongo en contacto con vos por: ${formData.subject}.`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
   };
 
   const scrollToTop = () => {
@@ -34,7 +49,7 @@ export default function ContactFooter() {
         {/* Section Header */}
         <div className="section-header mb-16">
           <div className="section-tag">
-            <Mail className="w-4 h-4" /> Contacto Directo & Contrataciones
+            <MessageCircle className="w-4 h-4 text-emerald-400" /> Contacto Directo por WhatsApp
           </div>
           <h2 className="section-title">Ponete en Contacto</h2>
           <p className="section-subtitle">
@@ -75,20 +90,20 @@ export default function ContactFooter() {
                   </div>
                   <div>
                     <span className="text-[11px] text-[#a8a29e] block font-semibold uppercase tracking-wider">Correo Electrónico</span>
-                    <a href="mailto:contacto@fherroldan.com.ar" className="text-white hover:text-[#f59e0b] font-semibold text-sm text-decoration-none transition-colors">
-                      contacto@fherroldan.com.ar
+                    <a href="mailto:fher09roldan@gmail.com" className="text-white hover:text-[#f59e0b] font-semibold text-sm text-decoration-none transition-colors">
+                      fher09roldan@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#0a0908]/80 border border-white/10 hover:border-[#f59e0b]/40 transition-colors">
-                  <div className="p-2.5 rounded-lg bg-[#991b1b]/20 text-[#f59e0b]">
+                <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#0a0908]/80 border border-white/10 hover:border-emerald-500/40 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-[11px] text-[#a8a29e] block font-semibold uppercase tracking-wider">WhatsApp / Teléfono Directo</span>
-                    <a href="https://wa.me/5491100000000" target="_blank" rel="noreferrer" className="text-white hover:text-[#f59e0b] font-semibold text-sm text-decoration-none transition-colors">
-                      +54 9 11 (Consultas e Inscripciones)
+                    <a href="https://wa.me/5491165622872" target="_blank" rel="noreferrer" className="text-white hover:text-emerald-400 font-semibold text-sm text-decoration-none transition-colors">
+                      +54 9 11 6562-2872
                     </a>
                   </div>
                 </div>
@@ -106,13 +121,23 @@ export default function ContactFooter() {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-xs uppercase tracking-widest text-[#a8a29e] font-bold mb-3">Seguinos en Redes Sociales</h4>
+                <h4 className="text-xs uppercase tracking-widest text-[#a8a29e] font-bold mb-3">Seguinos en Instagram</h4>
                 <div className="flex flex-wrap gap-3">
-                  <a href="#" className="p-3 rounded-xl bg-[#1e1b18] hover:bg-[#991b1b] text-white hover:text-white transition-all border border-white/10 flex items-center gap-2 text-xs font-semibold">
-                    <Globe className="w-4 h-4 text-[#f59e0b]" /> @fherroldan.teatro
+                  <a
+                    href="https://instagram.com/fher_actua"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-3 rounded-xl bg-[#1e1b18] hover:bg-[#991b1b] text-white transition-all border border-white/10 flex items-center gap-2 text-xs font-semibold"
+                  >
+                    <InstagramIcon className="w-4 h-4 text-[#f59e0b]" /> @fher_actua
                   </a>
-                  <a href="#" className="p-3 rounded-xl bg-[#1e1b18] hover:bg-[#991b1b] text-white hover:text-white transition-all border border-white/10 flex items-center gap-2 text-xs font-semibold">
-                    <MessageSquare className="w-4 h-4 text-[#f59e0b]" /> LA COLMENA
+                  <a
+                    href="https://instagram.com/la_colmena_teatro"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-3 rounded-xl bg-[#1e1b18] hover:bg-[#991b1b] text-white transition-all border border-white/10 flex items-center gap-2 text-xs font-semibold"
+                  >
+                    <InstagramIcon className="w-4 h-4 text-[#f59e0b]" /> @la_colmena_teatro
                   </a>
                 </div>
               </div>
@@ -120,106 +145,66 @@ export default function ContactFooter() {
             </div>
           </div>
 
-          {/* Interactive Form Column */}
+          {/* WhatsApp Contact Panel Column */}
           <div className="lg:col-span-7">
-            <div className="glass-card p-8 sm:p-10 relative">
-              {submitted ? (
-                <div className="text-center py-16 space-y-4">
-                  <div className="w-20 h-20 rounded-full bg-[#f59e0b]/20 border-2 border-[#f59e0b] flex items-center justify-center mx-auto text-[#f59e0b]">
-                    <CheckCircle2 className="w-10 h-10 animate-bounce" />
-                  </div>
-                  <h3 className="font-serif text-3xl font-bold text-white">¡Mensaje Enviado con Éxito!</h3>
-                  <p className="text-sm text-[#a8a29e] max-w-md mx-auto leading-relaxed">
-                    Muchas gracias por escribir. Fher Roldán o el equipo de la Compañía Teatral LA COLMENA se pondrán en contacto con vos a la brevedad.
-                  </p>
-                  <button
-                    onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', phone: '', subject: 'Talleres de Teatro', message: '' }); }}
-                    className="btn btn-secondary text-xs uppercase tracking-wider mt-6"
-                  >
-                    Enviar otra consulta
-                  </button>
+            <div className="glass-card p-8 sm:p-10 relative border-emerald-500/30">
+              <form onSubmit={handleWhatsAppSend} className="space-y-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-serif text-2xl font-bold text-white flex items-center gap-2">
+                    <MessageCircle className="w-6 h-6 text-emerald-400" /> Contactar por WhatsApp
+                  </h3>
+                  <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    <Sparkles className="w-3.5 h-3.5" /> Chat Directo
+                  </span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-serif text-2xl font-bold text-white">Formulario de Contacto</h3>
-                    <span className="text-xs text-[#f59e0b] font-semibold flex items-center gap-1">
-                      <Sparkles className="w-3.5 h-3.5" /> Respuesta Rápida
-                    </span>
-                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-1.5">Nombre Completo *</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Tu nombre y apellido"
-                        className="w-full px-4 py-3 rounded-xl bg-[#0a0908] border border-white/10 text-white placeholder-[#57534e] focus:outline-none focus:border-[#f59e0b] transition-colors text-sm"
-                      />
-                    </div>
+                <p className="text-xs sm:text-sm text-[#a8a29e] leading-relaxed">
+                  Ingresá tu nombre y el motivo de tu consulta para iniciar una conversación directa por WhatsApp con Fher Roldán.
+                </p>
 
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-1.5">Correo Electrónico *</label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="tu@email.com"
-                        className="w-full px-4 py-3 rounded-xl bg-[#0a0908] border border-white/10 text-white placeholder-[#57534e] focus:outline-none focus:border-[#f59e0b] transition-colors text-sm"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-1.5">Teléfono / WhatsApp</label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="Ej: 11 1234 5678"
-                        className="w-full px-4 py-3 rounded-xl bg-[#0a0908] border border-white/10 text-white placeholder-[#57534e] focus:outline-none focus:border-[#f59e0b] transition-colors text-sm"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-1.5">Motivo de Consulta</label>
-                      <select
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#0a0908] border border-white/10 text-white focus:outline-none focus:border-[#f59e0b] transition-colors text-sm"
-                      >
-                        <option value="Talleres de Teatro">Inscripción a Talleres de Teatro</option>
-                        <option value="Contratación / Funciones">Contratación de Obras / Funciones</option>
-                        <option value="Dramaturgia">Consultas de Dramaturgia / Textos</option>
-                        <option value="Compañía LA COLMENA">Compañía Teatral LA COLMENA</option>
-                        <option value="Prensa / Prensa Teatral">Prensa y Entrevistas</option>
-                        <option value="Otro">Otro Asunto</option>
-                      </select>
-                    </div>
+                <div className="space-y-5">
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-2">
+                      Nombre Completo *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="Tu nombre y apellido"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#0a0908] border border-white/10 text-white placeholder-[#57534e] focus:outline-none focus:border-emerald-400 transition-colors text-sm"
+                    />
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-1.5">Mensaje o Detalle de la Consulta *</label>
-                    <textarea
-                      required
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Escribí tu consulta aquí..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#0a0908] border border-white/10 text-white placeholder-[#57534e] focus:outline-none focus:border-[#f59e0b] transition-colors text-sm resize-none"
-                    ></textarea>
+                    <label className="block text-xs uppercase tracking-wider text-[#a8a29e] font-bold mb-2">
+                      Motivo de Consulta *
+                    </label>
+                    <select
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#0a0908] border border-white/10 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm"
+                    >
+                      <option value="Inscripción a Talleres de Teatro">Inscripción a Talleres de Teatro</option>
+                      <option value="Contratación de Obras / Funciones">Contratación de Obras / Funciones</option>
+                      <option value="Consultas de Dramaturgia / Textos">Consultas de Dramaturgia / Textos</option>
+                      <option value="Compañía Teatral LA COLMENA">Compañía Teatral LA COLMENA</option>
+                      <option value="Prensa y Entrevistas">Prensa y Entrevistas</option>
+                      <option value="Otro Asunto">Otro Asunto</option>
+                    </select>
                   </div>
+                </div>
 
-                  <button type="submit" className="btn btn-primary w-full text-base py-3.5 font-bold shadow-lg">
-                    Enviar Mensaje Directo <Send className="w-4 h-4 ml-1" />
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-bold text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-950/40 hover:shadow-emerald-900/60 transition-all cursor-pointer active:scale-[0.99]"
+                  >
+                    <MessageCircle className="w-5 h-5 fill-current" /> Contactar por WhatsApp
                   </button>
-                </form>
-              )}
+                </div>
+              </form>
             </div>
           </div>
 
@@ -234,7 +219,7 @@ export default function ContactFooter() {
               <Drama className="w-5 h-5 text-[#f59e0b]" /> Fher Roldán
             </h4>
             <p className="text-xs text-[#a8a29e] leading-relaxed mb-4">
-              Profesor en Lengua y Literatura, dramaturgo, actor, director teatral y productor general de la Compañía Teatral LA COLMENA (fundada en 2013).
+              Actor, director teatral, dramaturgo, profesor en Lengua y Literatura y productor general de la Compañía Teatral LA COLMENA (fundada en 2013).
             </p>
             <span className="text-xs text-[#f59e0b] font-semibold italic">
               "El teatro es un camino de aprendizaje constante."
@@ -291,9 +276,22 @@ export default function ContactFooter() {
 
         </div>
 
-        {/* Bottom Bar: Copyright + Scroll to Top */}
+        {/* Bottom Bar: Copyright + Credits + Scroll to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#a8a29e]">
-          <p>© {new Date().getFullYear()} Fher Roldán · Compañía Teatral LA COLMENA. Todos los derechos reservados.</p>
+          <div className="space-y-1 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} Fher Roldán · Compañía Teatral LA COLMENA. Todos los derechos reservados.</p>
+            <p className="text-[11px] text-[#78716c]">
+              Sitio desarrollado por{' '}
+              <a
+                href="https://waveframe.com.ar"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#f59e0b] hover:underline font-semibold"
+              >
+                Waveframe Studio
+              </a>
+            </p>
+          </div>
           
           <button
             onClick={scrollToTop}

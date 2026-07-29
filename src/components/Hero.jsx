@@ -57,7 +57,7 @@ export default function Hero() {
 
             {/* Sub-heading / Roles */}
             <p className="text-lg sm:text-2xl text-[#f59e0b] font-serif italic mb-4 sm:mb-6 leading-snug sm:leading-relaxed font-semibold">
-              Dramaturgo · Director Teatral · Actor · Profesor de Lengua y Literatura · Productor
+              Actor · Director Teatral · Dramaturgo · Profesor de Lengua y Literatura · Productor
             </p>
 
             {/* Bio excerpt */}

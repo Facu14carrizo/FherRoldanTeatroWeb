@@ -1,18 +1,18 @@
 export const fherBio = {
   name: "Fher Roldán",
-  tagline: "Profesor en Lengua y Literatura · Tallerista de Teatro · Actor · Director Teatral · Dramaturgo · Productor",
+  tagline: "Actor · Director Teatral · Dramaturgo · Profesor en Lengua y Literatura · Productor",
   yearsExperience: "20+",
   companyName: "Compañía Teatral LA COLMENA",
   foundedYear: 2013,
-  shortBio: "Apasionado del teatro comunitario e independiente, Fher Roldán combina la docencia con la creación escénica, la dirección teatral y la formación de nuevos actores.",
-  fullBio: `Fher Roldán es profesor de Lengua y Literatura y un apasionado del teatro comunitario e independiente. Desde hace más de dos décadas desarrolla una intensa actividad artística y pedagógica, combinando la docencia con la creación escénica, la dirección teatral y la formación de nuevos actores.
+  shortBio: "Apasionado del teatro comunitario e independiente, combino la docencia con la creación escénica, la dirección teatral y la formación de nuevos actores.",
+  fullBio: `Soy profesor de Lengua y Literatura y un apasionado del teatro comunitario e independiente. Desde hace más de dos décadas desarrollo una intensa actividad artística y pedagógica, combinando la docencia con la creación escénica, la dirección teatral y la formación de nuevos actores.
 
-En 2013 fundó y comenzó a dirigir la Compañía Teatral LA COLMENA, espacio desde el cual impulsa proyectos teatrales con fuerte identidad barrial y comunitaria, promoviendo el acceso al arte, la participación colectiva y la producción de espectáculos independientes.
+En 2013 fundé y comencé a dirigir la Compañía Teatral LA COLMENA, espacio desde el cual impulso proyectos teatrales con fuerte identidad barrial y comunitaria, promoviendo el acceso al arte, la participación colectiva y la producción de espectáculos independientes.
 
-Se formó en actuación en La Escoba Teatral y realizó estudios de dramaturgia con el reconocido autor Juan Paya. Actualmente continúa en formación actoral permanente, entendiendo al teatro como un camino de aprendizaje constante.`,
-  philosophy: `Para Fher Roldán, el teatro es mucho más que una disciplina artística: es una herramienta de transformación social, encuentro humano y construcción colectiva. Su trabajo busca generar espacios donde la creatividad, la palabra y la emoción permitan contar historias que representen a la comunidad y fortalezcan los vínculos entre las personas.
+Me formé en actuación en La Escoba Teatral y realicé estudios de dramaturgia con el reconocido autor Juan Paya. Actualmente continúo en formación actoral permanente, entendiendo al teatro como un camino de aprendizaje constante.`,
+  philosophy: `Para mí, el teatro es mucho más que una disciplina artística: es una herramienta de transformación social, encuentro humano y construcción colectiva. Mi trabajo busca generar espacios donde la creatividad, la palabra y la emoción permitan contar historias que representen a la comunidad y fortalezcan los vínculos entre las personas.
 
-Desde la docencia, la actuación, la dramaturgia, la dirección y la producción, continúa apostando al teatro independiente como un espacio de crecimiento artístico, compromiso cultural y participación comunitaria.`,
+Desde la docencia, la actuación, la dramaturgia, la dirección y la producción, continúo apostando al teatro independiente como un espacio de crecimiento artístico, compromiso cultural y participación comunitaria.`,
   education: [
     { title: "Formación en Actuación", institution: "La Escoba Teatral" },
     { title: "Estudios de Dramaturgia", mentor: "Juan Paya" },
@@ -38,7 +38,7 @@ export const works = [
     type: "Dirección General & Producción Ejecutiva",
     tagline: "«Una obra impactante sobre la juventud, la violencia y el valor de la empatía.»",
     description: "Una obra de profunda intensidad dramática sobre la adolescencia, el bullying y la toma de decisiones. Llevada a escena durante 5 exitosas temporadas con constante ovación del público y destacada crítica.",
-    details: "Supervisión de elenco, diseño de puesta en escena con iluminación claroscuro y sonido inmersivo. Formó parte del repertorio icónico de la Compañía Teatral LA COLMENA."
+    details: "Supervisión de elenco, diseño de puesta en escena con iluminación claroscuro y sonido inmersivo. Formó parte del repertorio icónico de mi Compañía Teatral LA COLMENA."
   },
   {
     id: "esa-iglesia",
@@ -48,7 +48,7 @@ export const works = [
     type: "Dirección Teatral y Producción Integral",
     tagline: "«Obra emblema premiada que hace vibrar a la comunidad en cada función.»",
     description: "Producción galardonada que aborda tensiones sociales y metáforas comunitarias con un ritmo vertiginoso y actuaciones de alto impacto.",
-    details: "Obra emblema con la que LA COLMENA logró hitos competitivos y reconocimientos oficiales a nivel provincial y regional."
+    details: "Obra emblema con la que junto a LA COLMENA logramos hitos competitivos y reconocimientos oficiales a nivel provincial y regional."
   },
   {
     id: "la-colmena-obra",
@@ -56,7 +56,7 @@ export const works = [
     roles: ["dramaturgo"],
     type: "Dramaturgia Original",
     tagline: "«Texto propio sobre el latir de un barrio y las pasiones colectivas.»",
-    description: "Obra dramática escrita por Fher Roldán que explora la convivencia, los lazos comunitarios y las pulsiones colectivas en un entramado social denso y conmovedor.",
+    description: "Obra dramática escrita por mí que explora la convivencia, los lazos comunitarios y las pulsiones colectivas en un entramado social denso y conmovedor.",
     details: "Texto teatral de fuerte impronta poética y lenguaje directo."
   },
   {
@@ -74,8 +74,8 @@ export const works = [
     roles: ["dramaturgo", "actor"],
     actedCharacter: "Chori (Actor de Reparto)",
     type: "Dramaturgia & Actuación (Comedia)",
-    tagline: "«Risas garantizadas y enredos cómicos donde Fher compone a Chori.»",
-    description: "Comedia ligera de equívocos y enredos donde interpreta a 'Chori', un personaje entrañable que desencadena situaciones disparatadas.",
+    tagline: "«Risas garantizadas y enredos cómicos donde compongo a Chori.»",
+    description: "Comedia ligera de equívocos y enredos donde interpreto a 'Chori', un personaje entrañable que desencadena situaciones disparatadas.",
     details: "Doble faceta: autoría del texto e interpretación actoral cómica."
   },
   {
@@ -85,8 +85,8 @@ export const works = [
     actedCharacter: "Manuel (Protagonista)",
     type: "Coautoría & Actuación Protagónica",
     tagline: "«Pasillos, secretos y pasiones en un consorcio fuera de control.»",
-    description: "Obra coescrita por Fher Roldán. Drama/Comedia sobre los microconflictos de la convivencia en consorcio, secretos de pasillo y pasiones ocultas.",
-    details: "Interpretó el rol protagónico de Manuel con gran entrega actoral."
+    description: "Obra coescrita por mí. Drama/Comedia sobre los microconflictos de la convivencia en consorcio, secretos de pasillo y pasiones ocultas.",
+    details: "Interpreté el rol protagónico de Manuel con gran entrega actoral."
   },
   {
     id: "decir-si",
@@ -197,7 +197,7 @@ export const testimonials = [
 export const workshopsInfo = {
   title: "Formación y Talleres Teatrales",
   subtitle: "Espacios de creación, juego dramático y expresión colectiva para todas las edades",
-  description: "Fher Roldán ofrece talleres pedagógicos orientados al descubrimiento del potencial expresivo, la improvisación, el análisis de texto y la actuación en escena.",
+  description: "Ofrezco talleres pedagógicos orientados al descubrimiento del potencial expresivo, la improvisación, el análisis de texto y la actuación en escena.",
   groups: [
     { age: "Niños y Niñas", desc: "Estimulación de la creatividad, expresión corporal y construcción de historias mediante el juego." },
     { age: "Adolescentes", desc: "Construcción de personajes, exploración dramática, improvisación y trabajo en equipo." },

@@ -35,7 +35,7 @@ export default function WorkshopsSection() {
             </p>
 
             <p className="text-xs text-[#a8a29e] border-t border-white/10 pt-4 leading-relaxed italic">
-              "Fher Roldán promueve espacios inclusivos donde la formación actoral se entrelaza con el crecimiento personal y la expresión genuina."
+              "Promuevo espacios inclusivos donde la formación actoral se entrelaza con el crecimiento personal y la expresión genuina."
             </p>
 
             <a href="#contacto" className="btn btn-primary w-full mt-6 text-sm">

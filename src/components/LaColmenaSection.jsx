@@ -50,11 +50,11 @@ export default function LaColmenaSection() {
           <div className="lg:col-span-7 flex flex-col items-start">
             
             <p className="text-base sm:text-lg text-[#d6d3d1] mb-5 sm:mb-6 leading-relaxed">
-              En 2013, Fher Roldán fundó la <strong className="text-white">Compañía Teatral LA COLMENA</strong>, espacio independiente enfocado en acercar el arte dramático a la comunidad y dar lugar a producciones teatrales con una marcada sensibilidad social y comunitaria.
+              En 2013 fundé la <strong className="text-white">Compañía Teatral LA COLMENA</strong>, espacio independiente enfocado en acercar el arte dramático a la comunidad y dar lugar a producciones teatrales con una marcada sensibilidad social y comunitaria.
             </p>
 
             <p className="text-sm sm:text-base text-[#a8a29e] mb-6 sm:mb-8 leading-relaxed">
-              Como <strong className="text-[#f5f5f4]">Director General y Productor Ejecutivo</strong>, Fher coordina festivales, muestras y montajes escénicos integrales, ocupándose de la dirección artística, la gestión de recursos, la formación de elencos y la producción de espectáculos reconocidos a nivel provincial.
+              Como <strong className="text-[#f5f5f4]">Director General y Productor Ejecutivo</strong>, coordino festivales, muestras y montajes escénicos integrales, ocupándome de la dirección artística, la gestión de recursos, la formación de elencos y la producción de espectáculos reconocidos a nivel provincial.
             </p>
 
             {/* Highlights Grid */}

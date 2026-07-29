@@ -104,6 +104,8 @@ export default function Hero() {
                 <img
                   src="/fher_hero.png"
                   alt="Fher Roldán - Director Teatral y Dramaturgo"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-[380px] sm:h-[500px] object-cover object-top hover:scale-105 transition-transform duration-700"
                 />
                 

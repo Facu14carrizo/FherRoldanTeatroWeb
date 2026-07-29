@@ -219,7 +219,7 @@ export default function ContactFooter() {
               <Drama className="w-5 h-5 text-[#f59e0b]" /> Fher Roldán
             </h4>
             <p className="text-xs text-[#a8a29e] leading-relaxed mb-4">
-              Actor, director teatral, dramaturgo, profesor en Lengua y Literatura y productor general de la Compañía Teatral LA COLMENA (fundada en 2013).
+              Actor, director teatral, dramaturgo, profesor en Lengua y Literatura y productor general de la Compañía Teatral LA COLMENA (dirigida desde 2013).
             </p>
             <span className="text-xs text-[#f59e0b] font-semibold italic">
               "El teatro es un camino de aprendizaje constante."

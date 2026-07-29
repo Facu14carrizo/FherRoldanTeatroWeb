@@ -12,7 +12,7 @@ export default function LaColmenaSection() {
             <Users className="w-4 h-4" /> Compañía Teatral
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-extrabold text-[#f5f5f4] leading-tight">
-            LA COLMENA <span className="text-[#f59e0b] block text-xl sm:text-3xl font-normal italic mt-1">Fundada y dirigida por Fher Roldán</span>
+            LA COLMENA <span className="text-[#f59e0b] block text-xl sm:text-3xl font-normal italic mt-1">Dirigida por Fher Roldán</span>
           </h2>
         </div>
 
@@ -50,7 +50,7 @@ export default function LaColmenaSection() {
           <div className="lg:col-span-7 flex flex-col items-start">
             
             <p className="text-base sm:text-lg text-[#d6d3d1] mb-5 sm:mb-6 leading-relaxed">
-              En 2013 fundé la <strong className="text-white">Compañía Teatral LA COLMENA</strong>, espacio independiente enfocado en acercar el arte dramático a la comunidad y dar lugar a producciones teatrales con una marcada sensibilidad social y comunitaria.
+              Desde 2013 dirijo la <strong className="text-white">Compañía Teatral LA COLMENA</strong>, espacio independiente enfocado en acercar el arte dramático a la comunidad y dar lugar a producciones teatrales con una marcada sensibilidad social y comunitaria.
             </p>
 
             <p className="text-sm sm:text-base text-[#a8a29e] mb-6 sm:mb-8 leading-relaxed">

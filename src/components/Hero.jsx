@@ -62,7 +62,7 @@ export default function Hero() {
 
             {/* Bio excerpt */}
             <p className="text-sm sm:text-lg text-[#a8a29e] mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-              Más de dos décadas de pasión escénica y pedagógica. Fundador y Director de la <strong className="text-[#f5f5f4]">Compañía Teatral LA COLMENA</strong>, impulsando la transformación social a través del arte colectivo.
+              Más de dos décadas de pasión escénica y pedagógica. Director General de la <strong className="text-[#f5f5f4]">Compañía Teatral LA COLMENA</strong>, impulsando la transformación social a través del arte colectivo.
             </p>
 
             {/* Action Buttons */}
@@ -83,7 +83,7 @@ export default function Hero() {
               </div>
               <div className="p-3 rounded-xl bg-[#141210]/60 border border-white/5 text-center lg:text-left">
                 <span className="font-serif text-2xl sm:text-4xl font-bold text-[#f59e0b] block">2013</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#a8a29e]">Fundador LA COLMENA</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#a8a29e]">Director LA COLMENA</span>
               </div>
               <div className="col-span-2 sm:col-span-1 p-3 rounded-xl bg-[#141210]/60 border border-white/5 text-center lg:text-left">
                 <span className="font-serif text-2xl sm:text-4xl font-bold text-[#f5f5f4] block">Premiado</span>

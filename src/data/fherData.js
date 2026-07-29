@@ -7,7 +7,7 @@ export const fherBio = {
   shortBio: "Apasionado del teatro comunitario e independiente, combino la docencia con la creación escénica, la dirección teatral y la formación de nuevos actores.",
   fullBio: `Soy profesor de Lengua y Literatura y un apasionado del teatro comunitario e independiente. Desde hace más de dos décadas desarrollo una intensa actividad artística y pedagógica, combinando la docencia con la creación escénica, la dirección teatral y la formación de nuevos actores.
 
-En 2013 fundé y comencé a dirigir la Compañía Teatral LA COLMENA, espacio desde el cual impulso proyectos teatrales con fuerte identidad barrial y comunitaria, promoviendo el acceso al arte, la participación colectiva y la producción de espectáculos independientes.
+Desde 2013 dirijo la Compañía Teatral LA COLMENA, espacio desde el cual impulso proyectos teatrales con fuerte identidad barrial y comunitaria, promoviendo el acceso al arte, la participación colectiva y la producción de espectáculos independientes.
 
 Me formé en actuación en La Escoba Teatral y realicé estudios de dramaturgia con el reconocido autor Juan Paya. Actualmente continúo en formación actoral permanente, entendiendo al teatro como un camino de aprendizaje constante.`,
   philosophy: `Para mí, el teatro es mucho más que una disciplina artística: es una herramienta de transformación social, encuentro humano y construcción colectiva. Mi trabajo busca generar espacios donde la creatividad, la palabra y la emoción permitan contar historias que representen a la comunidad y fortalezcan los vínculos entre las personas.

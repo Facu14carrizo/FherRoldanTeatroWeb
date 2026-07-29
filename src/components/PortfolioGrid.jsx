@@ -80,9 +80,21 @@ export default function PortfolioGrid() {
             <div
               key={work.id}
               onClick={() => setSelectedWork(work)}
-              className="glass-card group cursor-pointer flex flex-col justify-between hover:border-[#f59e0b]/50 relative"
+              className="glass-card group cursor-pointer flex flex-col justify-between hover:border-[#f59e0b]/50 relative overflow-hidden"
             >
               <div>
+                {/* Play Poster / Banner Image */}
+                {work.image && (
+                  <div className="-mx-6 -mt-6 mb-4 h-48 sm:h-52 overflow-hidden bg-[#0a0908] relative">
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#141210] via-transparent to-transparent opacity-90" />
+                  </div>
+                )}
+
                 {/* Role badges */}
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   {work.roles.map((r) => getRoleBadge(r))}
@@ -145,14 +157,26 @@ export default function PortfolioGrid() {
       {/* Responsive Mobile Modal View */}
       {selectedWork && (
         <div className="modal-overlay" onClick={() => setSelectedWork(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content overflow-hidden max-w-2xl" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelectedWork(null)}
-              className="absolute top-4 right-4 text-[#a8a29e] hover:text-[#f5f5f4] p-2 focus:outline-none bg-[#141210] rounded-full border border-white/10"
+              className="absolute top-4 right-4 z-20 text-[#a8a29e] hover:text-[#f5f5f4] p-2 focus:outline-none bg-[#141210]/80 rounded-full border border-white/10 backdrop-blur-md"
               aria-label="Cerrar"
             >
               <X className="w-5 h-5" />
             </button>
+
+            {/* Modal Image Banner */}
+            {selectedWork.image && (
+              <div className="-mx-6 -mt-6 sm:-mx-8 sm:-mt-8 mb-6 h-56 sm:h-64 overflow-hidden relative bg-[#0a0908]">
+                <img
+                  src={selectedWork.image}
+                  alt={selectedWork.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#141210] via-transparent to-transparent opacity-90" />
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-1.5 mb-3 pr-8">
               {selectedWork.roles.map((r) => getRoleBadge(r))}

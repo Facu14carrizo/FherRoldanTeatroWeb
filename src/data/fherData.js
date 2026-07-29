@@ -33,6 +33,7 @@ export const works = [
   {
     id: "bang-bang",
     title: "Bang Bang, estás muerto",
+    image: "/Obras/bangbang.jpeg",
     roles: ["director", "productor"],
     seasons: "5 Temporadas",
     type: "Dirección General & Producción Ejecutiva",
@@ -43,6 +44,7 @@ export const works = [
   {
     id: "esa-iglesia",
     title: "Esa Iglesia llena de enemigos armados hasta los dientes",
+    image: "/Obras/esaiglesia.jpeg",
     roles: ["director", "productor"],
     awards: ["2024: 1.º Puesto Etapa Municipal (Juegos Bonaerenses)", "2024: 2.º Puesto Etapa Regional (Juegos Bonaerenses)", "2025: Selección CPTI (Festival Regional Prov. de Bs. As.)", "2026: 2.º Puesto Etapa Municipal"],
     type: "Dirección Teatral y Producción Integral",
@@ -62,6 +64,7 @@ export const works = [
   {
     id: "margaritas-recargadas",
     title: "Margaritas Recargadas",
+    image: "/Obras/margaritas.jpeg",
     roles: ["dramaturgo"],
     type: "Dramaturgia Original / Comedia Dramática",
     tagline: "«Una mirada picante y fresca sobre los secretos de familia y el amor cotidiano.»",
@@ -71,6 +74,7 @@ export const works = [
   {
     id: "quien-podria",
     title: "¿Quién podría?",
+    image: "/Obras/quienpodria.jpeg",
     roles: ["dramaturgo", "actor"],
     actedCharacter: "Chori (Actor de Reparto)",
     type: "Dramaturgia & Actuación (Comedia)",
@@ -81,6 +85,7 @@ export const works = [
   {
     id: "expensas",
     title: "Expensas",
+    image: "/Obras/expensas.jpeg",
     roles: ["dramaturgo", "actor"],
     actedCharacter: "Manuel (Protagonista)",
     type: "Coautoría & Actuación Protagónica",
